@@ -1,0 +1,278 @@
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title-section > h2,
+.title-section-rak > h2 {
+  font-size: 22px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.title-section > h3 {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.border-bottom {
+  border-bottom-style: solid;
+  margin: auto;
+  margin-bottom: 25px;
+  width: 30px;
+  border-bottom-color: black;
+}
+
+/* Button Propertise */
+.button {
+  padding: 8px 0;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.32);
+}
+
+.size-100px {
+  width: 100px;
+}
+
+.size-150px {
+  width: 150px;
+}
+
+.size-100percent {
+  width: 100%;
+}
+
+.green {
+  background-color: #39b855;
+}
+
+.red {
+  background-color: #b83939;
+}
+
+.light-blue {
+  background-color: black;
+}
+
+.blue {
+  background-color: #3955b8;
+}
+
+/* BAGIAN HEADER DAN FOOTER */
+.header-footer-section {
+  background-color: black;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  color: white;
+}
+
+.header-footer-section > h1 {
+  font-size: 24px;
+}
+
+.header-footer-section > p {
+  font-size: 14px;
+}
+
+/* BAGIAN BODY */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+/* CARD SECTION */
+.dashboard-container,
+.search-container,
+.rak-item,
+.insert-container,
+.edit-container,
+.delete-container,
+.info-saved-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px;
+  margin: 20px;
+  background-color: #f6ffff;
+
+  border: 2px solid black;
+  border-radius: 12px;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.32);
+}
+
+.dashboard-container {
+  width: 850px;
+}
+
+.search-container,
+.rak-item {
+  width: 400px;
+}
+
+.rak-item {
+  min-height: 550px;
+}
+
+.rak-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/* CARD CONTENT */
+/* STATUS CONTENT */
+.status-section {
+  text-align: center;
+}
+
+.title-table {
+  width: 200px;
+  padding: 0 30px;
+  font-size: 18px;
+  font-weight: normal;
+  color: black;
+}
+
+.data-table {
+  padding-top: 12px;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+/* SEARCH CONTENT */
+.content-section {
+  width: 100%;
+}
+
+.textbox {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid black;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.content-section > form > button {
+  margin-top: 15px;
+}
+
+/* RAK CONTENT */
+/* Bagian Judul */
+.title-section-rak {
+  margin: 0 20px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+.flex-right {
+  text-align: end;
+}
+
+.flex-item-row {
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/* Bagian Rak */
+.rak-section {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+.book-item {
+  /* display: none;    */
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.data-book {
+  flex-grow: 1;
+  color: black;
+  flex-direction: row;
+}
+
+.action-button {
+  flex-grow: 1;
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  flex-direction: row;
+}
+
+.margin-right-8px {
+  margin-right: 8px;
+}
+
+#img-container-uncomplete,
+#img-container-complete {
+  height: 100%;
+}
+
+#img-no-data {
+  width: 300px;
+  margin: auto;
+}
+
+/* INSERT & EDIT CONTENT */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.insert-container,
+.edit-container {
+  width: 500px;
+  margin: auto;
+}
+
+.insert-container > .title-section > h2,
+.edit-container > .title-section > h2 {
+  font-size: 22px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* CONFIRM DELETE & INFO SAVED DATA CONTENT */
+.delete-container {
+  background-color: #f9f8ef;
+  border: 2px solid #b5b839;
+  width: 380px;
+  margin: auto;
+}
+
+.info-saved-container {
+  background-color: #eff9f0;
+  border: 2px solid #39b855;
+  width: 250px;
+  margin: auto;
+}

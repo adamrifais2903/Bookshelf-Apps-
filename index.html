@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="AR fais" />
+
+    <title>Bookshelf Apps | Adam Rifais</title>
+
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="icon" href="assets/images/" />
+
+    <!-- IMPORT FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Bagian Header -->
+    <header>
+      <div class="header-footer-section">
+        <h1>Bookshelf Apps by Adam Rifais</h1>
+      </div>
+    </header>
+
+    <!-- Bagian Content -->
+    <main>
+      <!-- Content Status Buku -->
+      <section class="dashboard-container">
+        <div class="title-section">
+          <h2>Status Buku</h2>
+          <div class="border-bottom"></div>
+        </div>
+        <div class="status-section">
+          <table>
+            <thead>
+              <tr>
+                <th class="title-table">Belum Selesai Dibaca</th>
+                <th class="title-table">Selesai Dibaca</th>
+                <th class="title-table">Total Buku</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="data-table" id="uncomplete-count">0</td>
+                <td class="data-table" id="complete-count">0</td>
+                <td class="data-table" id="total-book-count">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Content Cari Buku -->
+      <section class="search-container">
+        <div class="title-section">
+          <h2>Cari Buku</h2>
+          <div class="border-bottom"></div>
+        </div>
+        <div class="content-section">
+          <form id="bookSearch" action="#">
+            <label for="searchTitleBook">Judul Buku</label>
+            <input type="text" id="searchTitleBook" name="searchTitleBook" class="textbox" required />
+            <button id="submitSearch" type="submit" class="button light-blue size-100percent">Tampilkan</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Content Tambah Buku -->
+      <section id="modalInsert" class="modal">
+        <div class="insert-container">
+          <div class="title-section">
+            <h2>Masukkan Data Buku</h2>
+          </div>
+          <div class="content-section">
+            <form id="bookInsert" action="#">
+              <label for="bookTitle">Judul Buku</label>
+              <input type="text" id="bookTitle" name="bookTitle" class="textbox" required />
+              <label for="bookAuthor">Penulis Buku</label>
+              <input type="text" id="bookAuthor" name="bookAuthor" class="textbox" required />
+              <label for="bookYear">Tahun Terbit</label>
+              <input type="number" id="bookYear" name="bookYear" class="textbox" required />
+              <label for="bookStatus">Status Buku</label>
+              <select name="bookStatus" id="bookStatus" class="textbox" required>
+                <option value="false">Belum dibaca</option>
+                <option value="true">Sudah dibaca</option>
+              </select>
+              <button id="submitInsert" type="submit" class="button light-blue size-100percent">Simpan</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Edit Buku -->
+      <section id="modalEdit" class="modal">
+        <div class="edit-container">
+          <div class="title-section">
+            <h2>Ubah Data Buku</h2>
+          </div>
+          <div class="content-section">
+            <form id="bookEdit" action="#">
+              <label for="bookTitle">Judul Buku</label>
+              <input type="text" id="bookTitle1" name="bookTitle" class="textbox" required />
+              <label for="bookAuthor">Penulis Buku</label>
+              <input type="text" id="bookAuthor1" name="bookAuthor" class="textbox" required />
+              <label for="bookYear">Tahun Terbit</label>
+              <input type="number" id="bookYear1" name="bookYear" class="textbox" required />
+              <button id="submitEdit" type="submit" class="button light-blue size-100percent">Simpan</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Konfirmasi Delete Buku -->
+      <section id="modalDelete" class="modal">
+        <div class="delete-container">
+          <p>Apakah Anda yakin ingin menghapus buku?</p>
+          <div class="action-button">
+            <button id="btnCancel" class="button light-blue size-100px margin-right-8px">Batal</button>
+            <button id="btnDeleteBook" class="button red size-100px">Hapus</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Informasi Buku Disimpan -->
+      <section id="modalInfoSaved" class="modal">
+        <div class="info-saved-container">
+          <p>Buku telah disimpan!</p>
+          <div class="action-button">
+            <button id="btnOk" class="button green size-100px">OK</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Rak Buku -->
+      <section class="rak-container">
+        <div class="title-section-rak">
+          <div class="flex-item-row">
+            <h2>Rak Buku</h2>
+          </div>
+          <div class="flex-item-row flex-right">
+            <button id="btnAdd" class="button light-blue size-150px">+ Tambah Buku</button>
+          </div>
+        </div>
+        <div class="rak-section">
+          <div class="rak-item">
+            <div class="title-section">
+              <h3>Belum Selesai Dibaca</h3>
+              <div class="border-bottom"></div>
+            </div>
+            <div id="uncompleteList" class="book-list"></div>
+            <div id="img-container-uncomplete">
+              <img src="assets/images/no-data.png" alt="Gambar tidak ada data" id="img-no-data" />
+            </div>
+          </div>
+          <div class="rak-item">
+            <div class="title-section">
+              <h3>Selesai Dibaca</h3>
+              <div class="border-bottom"></div>
+            </div>
+            <div id="completeList" class="book-list"></div>
+            <div id="img-container-complete">
+              <img src="assets/images/no-data.png" alt="Gambar tidak ada data" id="img-no-data" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bagian Footer -->
+    <footer>
+      <div class="header-footer-section">
+        <p>&copy; 2023 Adam Rifais. All rights reserved</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
